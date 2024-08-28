@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="../static/styles/facilities.css">
+{% endblock %}
+{% block title %}
+Hotel Facilies
+{% endblock %}
+{% block content %}
+<div>
+    <img src="../static/images/facilities-front.png" alt="front image" style="width: 100%; height: 400px;">
+    <h1 class="centered" style="justify-content: center; display: flex;">Our Suites</h1>
+</div>
+<p class="text-justify">Lofty, expansive rooms with vast, bright en-suite bathrooms and large private terraces are characteristic of the hotel’s wonderful sense of space and use of natural light. There are 45 high-ceilinged suites, two of which are penthouse style Presidential Suites and 43 Junior Suites culminating in vaulted beams. Muted colors and textured fabrics in ecru and taupe create an ambiance of contemporary-chic while subtle touches of brass, mahogany and leather bear reference to the classic elegance of vintage East African safaris Beyond the balustrade of your private balcony, we’ve chosen for you a view of The Green Hills of Africa. Each of our Suites is named after a founder of this hotel, travel, writing and exploring – will you be staying in the Gekonge Suite, the Onyango Suite or the Sarr Suite?</p>
+
+<div class="row" style="margin-top:20px; margin-left:20px">
+   <div class="col-8">
+       <h2>Facilities Available</h2>
+       <p>Find a room that suits you!!!!</p>
+       <br>
+      <table class="table table-hover table-dark">
+         <thead>
+            <tr>
+               <!-- Your Columns HERE -->
+               <th scope="col">Name</th>
+               <th scope="col">Price</th>
+               <th scope="col">Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}
+            
+            <tr>
+               <td>{{ item.name }}</td>
+               <td>{{ item.price }}$</td>
+               <td>{{ item.description }}</td>
+               <td>
+                  <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ item.id }}">More Info</button>
+                  <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-PurchaseConfirm-{{ item.id }}">Purchase this Item</button>
+               </td>
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </div>
+   <div class="col-4">
+        <h2>Owned Items</h2>
+        <p>Click on sell item to put an item back on the Market</p>
+        <br>
+        <div class="row">
+           {% for owned_item in owned_items %}
+           
+             <div class="col-md-6">
+                 <div style="margin-bottom: 5px" class="card text-center bg-dark">
+                      <div class="card-body">
+                          <h5 class="card-title">{{ owned_item.name }}</h5>
+                          <button type="button" class="btn btn-outline-danger" style="margin-bottom: 5px"
+                                  data-toggle="modal" data-target="#Modal-SellingConfirm-{{ owned_item.id }}">
+                              Sell this Item
+                          </button>
+                          <p class="card-text"><strong>
+                              This item costs {{ owned_item.price }}$
+                          </strong></p>
+                      </div>
+                  </div>
+             </div>
+           {% endfor %}
+        </div>
+   </div>
+</div>
+{% endblock %}

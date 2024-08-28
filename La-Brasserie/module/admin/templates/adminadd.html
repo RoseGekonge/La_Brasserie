@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="../static/styles/styleaddpage.css">
+{% endblock %}
+{% block heading %}
+<div class="page-header">
+    <h1>Add to the DataBase</h1>
+    <small>Home / Add to the DataBase</small>
+</div>
+{% endblock %}
+{% block content %}
+<div style="display: block; justify-content: center; padding-left: 200px;">
+    <div class="container">
+        <h1 class="form-title">Offers</h1>
+        <form action="{{ url_for('admin.add') }}" method="post">
+        <div class="main-user-info">
+            {{ offer.hidden_tag() }}
+            <div class="user-input-box">
+            <label for="fullName">Name</label>
+            {{ offer.name(class="form-control", placeholder="Name") }}
+            </div>
+            <div class="user-input-box">
+            <label for="username">Price</label>
+            {{ offer.price(class="form-control", placeholder="Price") }}
+            </div>
+            <div class="user-input-box">
+            <label for="email">Code</label>
+            {{ offer.code(class="form-control", placeholder="Code") }}
+            </div>
+            <div class="user-input-box">
+            <label for="phoneNumber">End Date</label>
+            {{ offer.end_date(class="form-control", placeholder="End Date") }}
+            </div>
+            <div class="user-input-box">
+            <label for="password">Description</label>
+            {{ offer.description(class="form-control", placeholder="Description") }}
+            </div>
+        </div>
+        <div class="form-submit-btn">
+            {{ offer.submit(class="btn btn-lg btn-block btn-primary") }}
+        </div>
+        </form>
+    </div>
+    <div class="container">
+        <h1 class="form-title">Facilities</h1>
+        <form action="#">
+        <div class="main-user-info">
+            {{ facilities.hidden_tag() }}
+            <div class="user-input-box">
+            <label for="fullName">Name</label>
+            {{ facilities.name(class="form-control", placeholder="Name") }}
+            </div>
+            <div class="user-input-box">
+            <label for="username">Price</label>
+            {{ facilities.price(class="form-control", placeholder="Price") }}
+            </div>
+            <div class="user-input-box">
+            <label for="email">Code</label>
+            {{ facilities.code(class="form-control", placeholder="Code") }}
+            </div>
+            <div class="user-input-box">
+            <label for="phoneNumber">End Date</label>
+            {{ facilities.end_date(class="form-control", placeholder="End Date") }}
+            </div>
+            <div class="user-input-box">
+            <label for="password">Description</label>
+            {{ facilities.description(class="form-control", placeholder="Description") }}
+            </div>
+        </div>
+        <div class="form-submit-btn">
+            {{ facilities.submit(class="btn btn-lg btn-block btn-primary") }}
+        </div>
+        </form>
+    </div>
+    <div class="container">
+        <h1 class="form-title">Items</h1>
+        <form action="#">
+        <div class="main-user-info">
+            {{ item.hidden_tag() }}
+            <div class="user-input-box">
+            <label for="fullName">Name</label>
+            {{ item.name(class="form-control", placeholder="Name") }}
+            </div>
+            <div class="user-input-box">
+            <label for="username">Price</label>
+            {{ item.price(class="form-control", placeholder="Price") }}
+            </div>
+            <div class="user-input-box">
+            <label for="email">Code</label>
+            {{ item.code(class="form-control", placeholder="Code") }}
+            </div>
+            <div class="user-input-box">
+            <label for="phoneNumber">Quantity</label>
+            {{ item.quantity(class="form-control", placeholder="Quantity") }}
+            </div>
+            <div class="user-input-box">
+            <label for="password">Description</label>
+            {{ item.description(class="form-control", placeholder="Description") }}
+            </div>
+        </div>
+        <div class="form-submit-btn">
+            {{ item.submit(class="btn btn-lg btn-block btn-primary") }}
+        </div>
+        </form>
+    </div>
+</div>
+  {% endblock %}

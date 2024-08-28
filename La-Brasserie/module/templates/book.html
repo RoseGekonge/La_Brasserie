@@ -1,0 +1,187 @@
+{% extends 'default.html' %}
+{% block style %}
+<link rel="stylesheet" href="../static/styles/book.css">
+{% endblock %}
+{% block heading %}
+<h1 class="heading mb-3">BOOK YOUR SPACE</h1>
+<ul class="custom-breadcrumbs mb-4">
+  <li><a href="index.html">Home</a></li>
+  <li>&bullet;</li>
+  <li>Book</li>
+</ul>
+{% endblock %}
+{% block content %}
+  <section class="section contact-section" id="next">
+    <div class="container">
+      
+        <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+          
+          <form action="{{ url_for('book') }}" method="post" class="bg-white p-md-5 p-4 mb-5 border">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="col-md-6 form-group">
+                  <label class="text-black font-weight-bold" for="name">First Name</label>
+                  {{ form.first_name(class="form-control", placeholder="First Name") }}
+                </div>
+                <div class="col-md-6 form-group">
+                  <label class="text-black font-weight-bold" for="name">Last Name</label>
+                  {{ form.last_name(class="form-control", placeholder="Last Name") }}
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="date">Check In Date</label>
+                    {{ form.start_date(class="form-control", placeholder="Date Check In") }}
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="name">Check Out Date</label>
+                    {{ form.end_date(class="form-control", placeholder="Date Check Out") }}
+                </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label class="text-black font-weight-bold" for="email">Room Type</label>
+                <div class="form-group">
+                    <!-- Add an onchange event to trigger the JavaScript function when a selection is made -->
+                    {{ form.room_type(class="form-control", placeholder="Choose your room") }}
+                </div>
+
+                <div class="row">
+                <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="checkin_date">Discount Code</label>
+                    <input type="text" id="discount" name="discount"class="form-control">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="text-black font-weight-bold" for="checkout_date">Phone Number</label>
+                    {{ form.phone_number(class="form-control", placeholder="Phone Number") }}
+                </div>
+                </div>
+
+                     
+                <div class="row mb-4">
+                <div class="col-md-12 form-group">
+                    <label class="text-black font-weight-bold" for="message">Notes</label>
+                    <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-6 form-group">
+                    {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        
+        <div class="row">
+          <div class="col-md-10 ml-auto contact-info"  style="padding-left: 0px;">
+            <p><span class="d-block">Address:</span> <span class="text-black"> Safari View Hotel, 4567 Mombasa Road, langata, Nairobi 00100, Kenya</span></p>
+            <p><span class="d-block">Phone:</span> <span class="text-black"> +254 70 0022385</span></p>
+            <p><span class="d-block">Email:</span> <span class="text-black"> labrasserie@gmail.com</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonial-section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">People Says</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="js-carousel-2 owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+          
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hero_1.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;Highly recommend this hotel! The attention to detail and personalized service made my stay unforgettable.</p>
+            </blockquote>
+            <p><em>&mdash;Orina </em></p>
+          </div> 
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hero_2.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;A hidden gem! The food, the ambiance, and the comfort were all five-star quality.;</p>
+            </blockquote>
+            <p><em>&mdash; Gekonge</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/bed-6830011_1920.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;The hotel exceeded my expectations in every way. I can't wait to return!;</p>
+            </blockquote>
+            <p><em>&mdash;Bill</em></p>
+          </div>
+
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hero_4.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;Exceptional service! From check-in to check-out, everything was seamless and welcoming.;</p>
+            </blockquote>
+            <p><em>&mdash;Michelle</em></p>
+          </div> 
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/image_5.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;Exceptional service! From check-in to check-out, everything was seamless and welcoming.;</p>
+            </blockquote>
+            <p><em>&mdash; Churchil</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/architecture-6646154_1920.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;The perfect getaway! The amenities were top-notch, and the views were breathtaking;</p>
+            </blockquote>
+            <p><em>&mdash; Alloys</em></p>
+          </div>
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/hotel-1979406_1920.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;Absolutely loved my stay! The staff was incredibly friendly and the room was spotless.;</p>
+            </blockquote>
+            <p><em>&mdash;Dorothy</em></p>
+          </div>
+
+        </div>
+          <!-- END slider -->
+      </div>
+
+    </div>
+  </section>
+  <script type="text/javascript">
+    function updateRoomType() {
+        // Get the selected option's text from the dropdown
+        var selectedOption = document.getElementById("roomtype").value;
+        // Set the value of the room_type input field to the selected option's text
+        document.getElementById("room_type").value = selectedOption;
+    }
+</script>
+{% endblock %}

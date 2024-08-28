@@ -1,0 +1,51 @@
+{% extends 'default.html' %}
+{% block style %}<link rel="stylesheet" href="../static/styles/user.css">{% endblock %}
+{% block heading %}
+<h1 class="heading mb-3">Welcome, {{ user_name.username }}</h1>
+<ul class="custom-breadcrumbs mb-4">
+  <li><a href="index.html">Home</a></li>
+  <li>&bullet;</li>
+  <li>{{ user_name.username }}</li>
+</ul>
+{% endblock %}
+{% block content %}
+    <div class="content-profile-page">
+        <div class="profile-user-page card">
+        <div class="img-user-profile">
+            </div>
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+            <div class="user-profile-data">
+                <h1>{{ user_name.username }}</h1>
+                <p>{{ user_name.email_address }}</p>
+            </div> 
+            <div class="description-profile">You Earn points whenever you purchase services, a room, Food, Wellness experience and Events. This points might build up and pay for your expenses here at La Brasserie. Be a consistent and loyal customer to enjoy the reward!!!<br>NOTE! This points are only associate to the phone number {{ user_name.phone_number }}, which you should use when booking.</div>
+            <ul class="data-user">
+            <li><a><strong>{{ user_name.points }} <i class="fas fa-coins" style="color: gold;"></i></strong><span>Points</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="heading" data-aos="fade-up" style="border-bottom:3px solid #CCC; padding-bottom:3px; font-size: 80px; text-align: center;">Your Reservation History</h2>
+
+    {% for x in reservation %}
+        {{ room }}
+        {% set room = Item.query.filter_by(name=x.room_type).first() %}
+        <div class="content-profile-page search-box containerz" style="width: 1200px;">  
+            <div class="container">
+                <div class="row align-items-center">
+                    <h2 class="heading" style="border-bottom:3px solid #CCC; padding-bottom:3px; font-size: 80px; text-align: center;">{{ x.room_type }}</h2>
+                    <span class="meta-post" style="display: flex; margin-left: 13em; color: chocolate;">From {{ x.start_date }} to {{ x.end_date }}</span>
+                    <p class="mb-4">{{ room.description }}</p>
+                    <p><a href=# data-fancybox class="text-uppercase letter-spacing-1">Ksh. {{ room.price }}/day</a></p>
+                    {% if x.confirmed == 'N' %}
+                        <p style="margin-left: 30em; background-color: darkgray;">Pending.........</p>
+                    {% else %}
+                        <p style="margin-left: 30em; background-color: darkgray;">Confirmed!!</p>
+                    {% endif %}
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <p style="text-align: center; margin-top: 5em;">--------------Book a space and you will see it here. <a href="{{ url_for('accomodation') }}">Explore</a>?--------------</p>
+{% endblock %}

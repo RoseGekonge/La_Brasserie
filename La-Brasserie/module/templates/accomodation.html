@@ -1,0 +1,151 @@
+{% extends 'default.html' %}
+{% block heading %}
+<h1 class="heading mb-3">Rooms</h1>
+<ul class="custom-breadcrumbs mb-4">
+  <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li>&bullet;</li>
+    <li>Rooms</li>
+</ul>
+{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/familyroom.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Family Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Family Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Family Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/presidentialsuite.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Presidential Suite</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Presidential Suite').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Presidential Suite').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/singleroom.jpg" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Single Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Single Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Single Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/twinroom.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Twin Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Twin Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Twin Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/deluxeroom.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Deluxe Suite</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Deluxe Suite').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Deluxe Suite').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/executiveroom.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Executive Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Executive Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Executive Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/clubroom.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Club Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Club Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Family Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/accessibleroom.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Asseccible Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Accessible Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Family Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <section class="section bg-light">
+
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade">Great Offers</h2>
+          <p data-aos="fade">With exceptional offers and packages, our hotel has them tailored just for you, to make you stay memorable. Whether you’re here for a relaxing getaway, a business trip, or a special celebration, our exclusive deals ensure you get the best value for your stay. Enjoy discounted rates on luxurious accommodations, complimentary breakfast, and special amenities designed to enhance your comfort. From romantic escapes to family adventures, our diverse range of offers guarantees something for every traveler. Book now to take advantage of our limited-time promotions and experience the unparalleled service and comfort that make our hotel a top choice for discerning guests.</p>
+        </div>
+      </div>
+    
+      <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
+        <a href="#" class="image d-block bg-image-2" style="background-image: url('../static/images/img_1.jpg');"></a>
+        <div class="text">
+          <span class="d-block mb-4"><span class="display-4 text-primary">$199</span> <span class="text-uppercase letter-spacing-2">/ per night</span> </span>
+          <h2 class="mb-4">Family Room(With 9000 Loyalty points)</h2>
+          <p>{{ items.query.filter_by(name='Family Room').first().description }} USE YOUR PROFILE PHONE NUMBER AS YOUR DISCOUNT CODE</p>
+          <p><a href="#" class="btn btn-primary text-white">Book Now</a></p>
+        </div>
+      </div>
+      <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="200">
+        <a href="#" class="image d-block bg-image-2 order-2" style="background-image: url('../static/images/img_2.jpg');"></a>
+        <div class="text order-1">
+          <span class="d-block mb-4"><span class="display-4 text-primary">$599</span> <span class="text-uppercase letter-spacing-2">/ per night</span> </span>
+          <h2 class="mb-4">Presidential Room(With 15000 Loyalty points)</h2>
+          <p>{{ items.query.filter_by(name='Presidential Suite').first().description }} USE YOUR PROFILE PHONE NUMBER AS YOUR DISCOUNT CODE.</p>
+          <p><a href="#" class="btn btn-primary text-white">Book Now</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

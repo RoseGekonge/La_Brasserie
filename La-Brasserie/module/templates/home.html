@@ -1,0 +1,487 @@
+{% extends 'default.html' %}
+{% block heading %}<h1 class="heading">A Best Place To Stay</h1>{% endblock %}
+{% block content %}
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up">
+          
+          <img src="../static/images/card-img.jpg" alt="Image" class="img-fluid rounded">
+        </div>
+        <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
+          <h2 class="heading">Welcome to La Brasserie!!</h2>
+          <p class="mb-4">Welcome to La Brasserie, where luxury meets comfort in the heart of Kenya. Nestled in a serene environment, our hotel offers a perfect blend of modern amenities and warm hospitality, ensuring an unforgettable experience for every guest. Whether you're here for business or leisure, La Brasserie promises an elegant stay with exquisite dining, spacious rooms, and top-notch services tailored to your needs. Come and indulge in the tranquil ambiance, where every moment is crafted to perfection. Discover a haven of relaxation and sophistication at La Brasserie—your home away from home.</p>
+          <p><a href="#" class="btn btn-primary text-white py-2 mr-3">Learn More</a> <span class="mr-3 font-family-serif"><em>or</em></span> <a href="https://vimeo.com/channels/staffpicks/93951774"  data-fancybox class="text-uppercase letter-spacing-1">See video</a></p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Rooms &amp; Suites</h2>
+          <p data-aos="fade-up" data-aos-delay="100">At La Brasserie, we offer a selection of elegantly designed rooms to suit every traveler’s needs. From our cozy Single Rooms to the spacious Deluxe Suites, each space is thoughtfully furnished with modern amenities and stylish decor. Whether you're here for a short stay or an extended visit, our rooms provide the perfect retreat, combining comfort with a touch of luxury. Enjoy serene views, plush bedding, and all the conveniences you need for a restful and rejuvenating stay. Welcome to your private sanctuary at La Brasserie.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/Screenshot 2024-08-15 141610.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Single Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Single Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Single Room').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/Screenshot 2024-08-15 143416.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Family Room</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Family Room').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Family Room').first().price }} / per night</span>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/Screenshot 2024-08-15 143854.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Presidential Suite</h2>
+              <p style="color: slategray;">{{ items.query.filter_by(name='Presidential Suite').first().description }}</p>
+              <span class="text-uppercase letter-spacing-1">Ksh. {{ items.query.filter_by(name='Presidential Suite').first().price }} / per night</span>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="section slider-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Photos</h2>
+          <p data-aos="fade-up" data-aos-delay="100">View this different Point of views of our hotel and Understand WHY we are outstanding.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="home-slider major-caousel owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 141438.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-1.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 142009.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-2.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 143115.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-3.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 142735.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-4.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 142600.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-5.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 143513.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-6.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 141330.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-7.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+          </div>
+          <!-- END slider -->
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  <!-- END section -->
+  
+  <section class="section bg-image overlay" style="background-image: url('images/hero_3.jpg');">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading text-white" data-aos="fade">Our Restaurant Menu</h2>
+          <p class="text-white" data-aos="fade" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        </div>
+      </div>
+      <div class="food-menu-tabs" data-aos="fade">
+        <ul class="nav nav-tabs mb-5" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active letter-spacing-2" id="mains-tab" data-toggle="tab" href="#mains" role="tab" aria-controls="mains" aria-selected="true">Mains</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link letter-spacing-2" id="desserts-tab" data-toggle="tab" href="#desserts" role="tab" aria-controls="desserts" aria-selected="false">Desserts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link letter-spacing-2" id="drinks-tab" data-toggle="tab" href="#drinks" role="tab" aria-controls="drinks" aria-selected="false">Drinks</a>
+          </li>
+        </ul>
+        <div class="tab-content py-5" id="myTabContent">
+          
+          
+          <div class="tab-pane fade show active text-left" id="mains" role="tabpanel" aria-labelledby="mains-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$20.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Murgh Tikka Masala</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$35.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Fish Moilee</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$15.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Safed Gosht</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$10.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">French Toast Combo</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$8.35</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Vegie Omelet</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$22.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Chorizo &amp; Egg Omelet</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+              </div>
+            </div>
+            
+
+          </div> <!-- .tab-pane -->
+
+          <div class="tab-pane fade text-left" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$11.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Banana Split</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$72.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Sticky Toffee Pudding</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$26.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Pecan</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$42.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Apple Strudel</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$7.35</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Pancakes</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$22.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Ice Cream Sundae</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- .tab-pane -->
+          <div class="tab-pane fade text-left" id="drinks" role="tabpanel" aria-labelledby="drinks-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$32.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Spring Water</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$14.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Coke, Diet Coke, Coke Zero</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$93.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Orange Fanta</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$18.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Lemonade, Lemon Squash</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$38.35</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Sparkling Mineral Water</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+                <div class="food-menu mb-5">
+                  <span class="d-block text-primary h4 mb-3">$69.00</span>
+                  <h3 class="text-white"><a href="#" class="text-white">Lemon, Lime &amp; Bitters</a></h3>
+                  <p class="text-white text-opacity-7">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+              </div>
+            </div>
+          </div> <!-- .tab-pane -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Corporate &amp; Events</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Make your special Meetings and occasion unforgettable at Nafasi Outdoor. Our versatile venue is perfect for any function, from elegant weddings and sophisticated society gatherings to corporate events and company functions. With a stunning setting, customizable layouts, and exceptional service, we’re here to bring your vision to life. Let us provide the perfect backdrop for your next event—where every detail is crafted to perfection.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/Screenshot 2024-08-15 144311.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Savana Meeting Room</h2>
+              <span class="text-uppercase letter-spacing-1">Ksh. 80,000</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/Screenshot 2024-08-15 144100.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Serengeti Meeting Room</h2>
+              <span class="text-uppercase letter-spacing-1">Ksh. 100,000$</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a href="#" class="room">
+            <figure class="img-wrap">
+              <img src="../static/images/hotel-images/Screenshot 2024-08-15 144216.png" alt="Free website template" class="img-fluid mb-3">
+            </figure>
+            <div class="p-3 text-center room-info">
+              <h2>Amboseli Meeting Room</h2>
+              <span class="text-uppercase letter-spacing-1">Ksh. 150000</span>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <section class="section slider-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Wellness</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Wellness spaces have become sanctuaries where individuals can escape the hustle and bustle of daily life to rejuvenate their minds, bodies, and spirits. These carefully designed environments blend tranquility with modern amenities, offering a holistic approach to well-being. Whether it's through meditation, yoga, spa treatments, or simply a quiet place to unwind, wellness spaces cater to the growing need for mental and physical health maintenance. They provide a haven of peace and relaxation, encouraging individuals to reconnect with themselves and promote a balanced, healthy lifestyle.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="home-slider major-caousel owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 143115.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-1.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 143307.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-2.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/download.jpeg" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-3.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/download (1).jpeg" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-4.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/relaxation-3065577.jpg" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-5.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 142506.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-6.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+            <div class="slider-item">
+              <a href="../static/images/hotel-images/Screenshot 2024-08-15 142859.png" data-fancybox="images" data-caption="Caption for this image"><img src="../static/images/slider-7.jpg" alt="Image placeholder" class="img-fluid"></a>
+            </div>
+          </div>
+          <!-- END slider -->
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  
+  <!-- END section -->
+  
+  <section class="section blog-post-entry bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">Offers</h2>
+          <p data-aos="fade-up">With exceptional offers and packages, our hotel has them tailored just for you, to make you stay memorable. Whether you’re here for a relaxing getaway, a business trip, or a special celebration, our exclusive deals ensure you get the best value for your stay. Enjoy discounted rates on luxurious accommodations, complimentary breakfast, and special amenities designed to enhance your comfort. From romantic escapes to family adventures, our diverse range of offers guarantees something for every traveler. Book now to take advantage of our limited-time promotions and experience the unparalleled service and comfort that make our hotel a top choice for discerning guests.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 post" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="media media-custom d-block mb-4 h-100">
+            <a href="#" class="mb-4 d-block"><img src="../static/images/hotel-images/hero_3.jpg" alt="Image placeholder" class="img-fluid"></a>
+            <div class="media-body">
+              <span class="meta-post">All Time Deal</span>
+              <h2 class="mt-0 mb-3"><a href="#">Buffet Deals</a></h2>
+              <p>The bigger the group you ae in, the more your chances of getting a free buffet person. Come in a group of 7 and get one free person's buffet. Come in a group of 13 and 2 of you will get a free buffet to go.</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 post" data-aos="fade-up" data-aos-delay="200">
+          <div class="media media-custom d-block mb-4 h-100">
+            <a href="#" class="mb-4 d-block"><img src="../static/images/hotel-images/Screenshot 2024-08-15 143644.png" alt="Image placeholder" class="img-fluid"></a>
+            <div class="media-body">
+              <span class="meta-post">All Time Deal</span>
+              <h2 class="mt-0 mb-3"><a href="#">All in one package</a></h2>
+              <p>Purchase more to save more!! The more of our services you buy, the more you will save. The package includes Wellness services, Accomodation services and culinary services.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 post" data-aos="fade-up" data-aos-delay="300">
+          <div class="media media-custom d-block mb-4 h-100">
+            <a href="#" class="mb-4 d-block"><img src="../static/images/hotel-images/Screenshot 2024-08-15 142830.png" alt="Image placeholder" class="img-fluid"></a>
+            <div class="media-body">
+              <span class="meta-post">All Time Deal</span>
+              <h2 class="mt-0 mb-3"><a href="#">Wellness discount packages</a></h2>
+              <p>Purchase your affordable future now and have more in your pocket then. Pay for way more days and get to save more.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-----------Comments-------------->
+  <section class="section testimonial-section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-7">
+          <h2 class="heading" data-aos="fade-up">People Says</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="js-carousel-2 owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
+          
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hero_1.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;Highly recommend this hotel! The attention to detail and personalized service made my stay unforgettable.</p>
+            </blockquote>
+            <p><em>&mdash;Orina </em></p>
+          </div> 
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hero_2.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;A hidden gem! The food, the ambiance, and the comfort were all five-star quality.;</p>
+            </blockquote>
+            <p><em>&mdash; Gekonge</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/bed-6830011_1920.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;The hotel exceeded my expectations in every way. I can't wait to return!;</p>
+            </blockquote>
+            <p><em>&mdash;Bill</em></p>
+          </div>
+
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hero_4.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;Exceptional service! From check-in to check-out, everything was seamless and welcoming.;</p>
+            </blockquote>
+            <p><em>&mdash;Michelle</em></p>
+          </div> 
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/image_5.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;Exceptional service! From check-in to check-out, everything was seamless and welcoming.;</p>
+            </blockquote>
+            <p><em>&mdash; Churchil</em></p>
+          </div>
+
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/architecture-6646154_1920.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+
+              <p>&ldquo;The perfect getaway! The amenities were top-notch, and the views were breathtaking;</p>
+            </blockquote>
+            <p><em>&mdash; Alloys</em></p>
+          </div>
+          <div class="testimonial text-center slider-item">
+            <div class="author-image mb-3">
+              <img src="../static/images/hotel-images/hotel-1979406_1920.jpg" alt="Image placeholder" class="rounded-circle mx-auto">
+            </div>
+            <blockquote>
+              <p>&ldquo;Absolutely loved my stay! The staff was incredibly friendly and the room was spotless.;</p>
+            </blockquote>
+            <p><em>&mdash;Dorothy</em></p>
+          </div>
+
+        </div>
+          <!-- END slider -->
+      </div>
+
+    </div>
+  </section>
+  {% endblock %}

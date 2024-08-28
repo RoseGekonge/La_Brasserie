@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block heading %}
+<div class="page-header">
+    <h1>Profiles</h1>
+    <small>Home / Profiles</small>
+</div>
+{% endblock %}
+{% block content %}
+    <div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th><span class="las la-sort"></span> CLIENT</th>
+                    <th><span class="las la-sort"></span> EMAIL</th>
+                    <th><span class="las la-sort"></span> PHONE</th>
+                    <th><span class="las la-sort"></span> POINTS</th>
+                    <th><span class="las la-sort"></span> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tbody>
+                    {% for reservation in profile %}
+                    <tr>
+                        <td>#{{ reservation.id }}</td>
+                        <td>
+                            <div class="client">
+                                <div class="client-info">
+                                    <h4>{{ reservation.username }}</h4>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            {{ reservation.email_address }}
+                        </td>
+                        <td>
+                            {{ reservation.phone_number }}
+                        </td>
+                        <td>
+                            {{ reservation.points }}
+                        </td>
+                        <td>
+                            <div class="actions">
+                                <span class="las la-user-alt"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

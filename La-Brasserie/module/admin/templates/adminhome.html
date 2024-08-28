@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block heading %}
+<div class="page-header">
+    <h1>Dashboard</h1>
+    <small>Home / Dashboard</small>
+</div>
+{% endblock %}
+{% block content %}
+<div class="records table-responsive">
+    <div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th><span class="las la-sort"></span> CLIENT</th>
+                    <th><span class="las la-sort"></span> PHONE NUMBER</th>
+                    <th><span class="las la-sort"></span> ROOM TYPE</th>
+                    <th><span class="las la-sort"></span> COST</th>
+                    <th><span class="las la-sort"></span> ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td>#{{ reservation.id }}</td>
+                    <td>
+                        <div class="client">
+                            <div class="client-info">
+                                <h4>{{ reservation.first_name }} {{ reservation.last_name }}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        {{ reservation.phone_number }}
+                    </td>
+                    <td>
+                        {{ reservation.room_type }}
+                    </td>
+                    <td>
+                        Ksh. {{ cost(reservation.start_date, reservation.end_date, reservation.room_type) }}
+                    </td>
+                    <td>
+                        <div class="actions">
+                            <span class="las la-eye"></span>
+                        </div>
+                        {% if reservation.confirmed == 'N' %}
+                        <form action="{{ url_for('admin.confirm_reservation', reservation_id=reservation.id) }}" method="post">
+                            <button type="submit">Confirm</button>
+                        </form>
+                        {% else %}
+                        Confirmed
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

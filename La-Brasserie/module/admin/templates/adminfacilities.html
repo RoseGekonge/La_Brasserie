@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block heading %}
+<div class="page-header">
+    <h1>Rooms & Facilities</h1>
+    <small>Home / Rooms & facilities</small>
+</div>
+{% endblock %}
+{% block content %}
+<div class="records table-responsive">
+    <div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>CATEGORY</th>
+                    <th><span class="las la-sort"></span> FACILITY</th>
+                    <th><span class="las la-sort"></span> CODE</th>
+                    <th><span class="las la-sort"></span> QUANTITY</th>
+                    <th><span class="las la-sort"></span> PRICE</th>
+                    <th><span class="las la-sort"></span> DELETE</th>
+                </tr>
+            </thead>
+            <tr></tr>
+            <tbody>
+                {% for reservation in offers %}
+                <tr>
+                    <td>OFFERS</td>
+                    <td>
+                        <div class="client">
+                            <div class="client-info">
+                                <h4>{{ reservation.name }}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p>{{ reservation.code }}</p>
+                    </td>
+                    <td>
+                        NULL
+                    </td>
+                    <td>
+                        {{ reservation.price }}
+                    </td>
+                    <td>
+                        <form action="{{ url_for('admin.delete_offers', reservation_id=reservation.id) }}" method="post">
+                            <button type="submit">
+                                DELETE
+                            </button>
+                        </form>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <hr>
+            <tbody>
+                {% for reservation in items %}
+                <tr>
+                    <td>ROOMS & SUITES</td>
+                    <td>
+                        <div class="client">
+                            <div class="client-info">
+                                <h4>{{ reservation.name }}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        {{ reservation.code }}
+                    </td>
+                    <td>
+                        {{ reservation.quantity }}
+                    </td>
+                    <td>
+                        {{ reservation.price }}
+                    </td>
+                    <td>
+                        <form action="{{ url_for('admin.delete_item', reservation_id=reservation.id) }}" method="post">
+                            <button type="submit">
+                                DELETE
+                            </button>
+                        </form>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <hr>
+            <tbody>
+                {% for reservation in facilities %}
+                <tr>
+                    <td>CORPORATE FACILITIES</td>
+                    <td>
+                        <div class="client">
+                            <div class="client-info">
+                                <h4>{{ reservation.name }}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        {{ reservation.code }}
+                    </td>
+                    <td>
+                        {{ 1 }}
+                    </td>
+                    <td>
+                        {{ reservation.price }}
+                    </td>
+                    <td>
+                        <form action="{{ url_for('admin.delete_facility', reservation_id=reservation.id) }}" method="post">
+                            <button type="submit">
+                                DELETE
+                            </button>
+                        </form>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

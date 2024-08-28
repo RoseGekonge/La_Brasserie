@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login popup box</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../static/styles/login.css" >
+</head>
+<body>
+    <div class="wrapper">
+        <form method="POST" action="{{ url_for('admin.login_page') }}">
+            {{ form.hidden_tag() }}
+            <h1>Login</h1>
+            <div class="input-box">
+                {{ form.username(class="form-control", placeholder="User Name") }}
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password(class="form-control", placeholder="Password") }}
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </form>
+    </div>
+</body>
+</html>
+ 
