@@ -7,6 +7,15 @@
   <link rel="stylesheet" type="text/css" href="../static/styles/login.css" >
 </head>
 <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul id="flashed-messages">
+        {% for message in messages %}
+            <li class="alert alert-{{ category }}">{{fieldName}}: {{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
     <div class="wrapper">
         <form method="POST">
             {{ form.hidden_tag() }}
@@ -29,6 +38,18 @@
             </div>
         </form>
     </div>
+    <script>
+        // Wait for the document to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find the element containing the messages
+            var flashedMessages = document.getElementById('flashed-messages');
+            
+            // Set a timeout to hide the messages after 5 seconds (5000 milliseconds)
+            setTimeout(function() {
+                flashedMessages.style.display = 'none';
+            }, 4000); // Adjust the time as needed
+        });
+      </script>
 </body>
 </html>
  
