@@ -2,4 +2,4 @@
 This is a presentation for [my ALX SE course](https://github.com/RoseGekonge) Completion
 
 Below is the link to the site deployment.
-https://la-brasserie-sfqn.onrender.com
+https://la-brasserie-sfqn.onrender.com [Link](https://github.com/RoseGekonge/La_Brasserie)
