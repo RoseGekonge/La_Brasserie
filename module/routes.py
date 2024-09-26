@@ -8,26 +8,27 @@ from flask_login import login_user, logout_user, login_required, current_user
 from module.admin import admin1 as admin
 
 app.register_blueprint(admin, url_prefix="/admin")
+backend = "by Rose Gekonge"
 
 
 @app.route("/home")
 @app.route("/")
 def home():
-    return render_template('home.html', items=Item)
+    return render_template('home.html', items=Item, backend=backend)
 
 @app.route("/dining")
 def dining():
-    return render_template('dining.html')
+    return render_template('dining.html', backend=backend)
 
 @app.route("/offers")
 def offer():
     offer = Offers.query.all()
-    return render_template('offer.html', offer=offer)
+    return render_template('offer.html', offer=offer, backend=backend)
 
 @app.route("/accomodation")
 def accomodation():
     items = Item.query.all()
-    return render_template('accomodation.html', items=Item)
+    return render_template('accomodation.html', items=Item, backend=backend)
 
 @app.route('/book', methods=["POST", "GET"])
 def book():
@@ -59,19 +60,19 @@ def book():
         for err_msg in form.errors.values():
             flash(f'There was an error while booking: {err_msg}', category='danger')
 
-    return render_template('book.html', form=form, items=items)
+    return render_template('book.html', form=form, items=items, backend=backend)
 
 @app.route("/wellness")
 def wellness():
-    return render_template('wellness.html')
+    return render_template('wellness.html', backend=backend)
 
 @app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    return render_template('contact.html', backend=backend)
 
 @app.route("/eventsandcorporate")
 def corporate():
-    return render_template('corporate.html')
+    return render_template('corporate.html', backend=backend)
 
 @app.route("/user")
 def user():
@@ -104,7 +105,7 @@ def login():
                 return redirect(url_for('user'))
             flash('Username and password are not match! Please try again', category='danger')
 
-    return render_template('login.html', form=form)
+    return render_template('login.html', form=form, backend=backend)
 
 @app.route('/logout')
 def logout():
@@ -130,8 +131,8 @@ def register():
         for err_msg in form.errors.values():
             flash(f'There was an error with creating a user: {err_msg}', category='danger')
 
-    return render_template('register.html', form=form)
+    return render_template('register.html', form=form, backend=backend)
 
 @app.route("/my_reservations")
 def my_reservation():
-    return render_template('blank.html')
+    return render_template('blank.html', backend=backend)
